@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function rot13(str) { // FREE CODE CAMP
+            var arr = new Array();
+            var regEx = /[A-Z]/;
+            for (var i = 0; i < str.length; i++) {
+                // if (str[i] !== ' ') {
+                if (regEx.test(str[i])) {
+                    var code = str.charCodeAt(i);
+                    var newCode = (str[i].charCodeAt() - "A".charCodeAt() + 13) % 26 + "A".charCodeAt();
+                    arr.push(String.fromCharCode(newCode));
+                } else {
+                    arr.push(str[i]);
+                }
+            }
+
+            return arr.join('');
+
+        }
+
+        rot13("SERR PBQR PNZC");
+    </script>
+</body>
+
+</html>

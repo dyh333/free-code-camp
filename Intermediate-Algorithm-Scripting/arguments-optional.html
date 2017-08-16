@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function add() {
+            if (arguments.length == 2) {
+                if (typeof arguments[0] !== 'number' || typeof arguments[1] !== 'number') {
+                    return undefined;
+                }
+                return arguments[0] + arguments[1];
+            } else {
+                var num1 = arguments[0];
+                if (typeof num1 !== 'number') {
+                    return undefined;
+                }
+
+                return function (num) {
+                    if (typeof num !== 'number') {
+                        return undefined;
+                    }
+                    else {
+                        return num1 + num;
+                    }
+                }
+            }
+        }
+
+        console.log(add(2)(3));
+    </script>
+</body>
+
+</html>

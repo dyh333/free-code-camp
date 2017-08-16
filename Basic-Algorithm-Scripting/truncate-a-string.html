@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function truncate(str, num) {
+            if (str.length > num) {
+                if (num <= 3) {
+                    str = str.slice(0, num).concat("...");
+                } else {
+                    str = str.slice(0, num  - 3).concat("...");
+                }
+            }
+
+            return str;
+
+        }
+
+        truncate("A-tisket a-tasket A green and yellow basket", 11);
+    </script>
+</body>
+
+</html>

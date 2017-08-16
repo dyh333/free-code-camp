@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function sumFibs(num) {
+            if(num == 1) return 1;
+
+            var arr = [1,1];
+            while(arr[arr.length-1] <= num){
+                arr.push(arr[arr.length-2] + arr[arr.length-1]);
+            }
+
+            var sum = 0;
+            for(var i=0; i<arr.length-1; i++){
+                if(arr[i]%2==1){
+                    sum += arr[i];
+                }
+            }
+
+            return sum;
+        }
+
+        console.log(sumFibs(75025));
+    </script>
+</body>
+
+</html>

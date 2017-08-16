@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function isTrueValue(value) {
+            return value;
+        }
+
+        function bouncer(arr) {
+            return arr.filter(isTrueValue);
+        }
+
+        function bouncer_advanced(arr) {
+            return arr.filter(Boolean);
+        }
+
+        console.log(bouncer([7, "ate", "", false, 9]));
+    </script>
+</body>
+
+</html>

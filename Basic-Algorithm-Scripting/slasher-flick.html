@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function slasher(arr, howMany) {
+            arr.splice(0, howMany);
+            return arr;
+        }
+
+        function slasher_2(arr, howMany) {
+            return arr.slice(howMany);
+        }
+
+        slasher([1, 2, 3], 9);
+    </script>
+</body>
+
+</html>

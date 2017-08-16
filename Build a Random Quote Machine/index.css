@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b95e0;
+  height: 100vh;
+}
+
+#main {
+  border-radius: 5px;
+  background-color: white;
+  width: 450px;
+  height: auto;
+  padding: 40px 50px;
+}
+
+#quote {
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+}
+
+#author {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  text-align: right;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#share > div {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#new_quote {
+  width: 92px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: #1b95e0;
+  color: white;
+  padding: 8px 18px;
+  font-size: 0.85em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

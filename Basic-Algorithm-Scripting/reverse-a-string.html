@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function reverseString(str) {
+            var strArr = str.split('');
+            var newStr = new Array();
+            var i = strArr.length - 1;
+            for (; i >= 0; i--) {
+                newStr.push(strArr[i]);
+            }
+            
+            return newStr.join('');
+        }
+
+        function  reverseString_simple(str) {
+            return str.split('').reverse().join('');
+        }
+
+        reverseString("hello");
+
+    </script>
+</body>
+
+</html>

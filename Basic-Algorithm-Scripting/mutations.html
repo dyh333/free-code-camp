@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function mutation(arr) {
+            var first = arr[0].toLowerCase();
+            var second = arr[1].toLowerCase();
+
+            for (var i = 0; i < second.length; i++) {
+                if (first.indexOf(second[i]) < 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function mutation_2(arr) {
+            return arr[1].toLowerCase()
+                .split('')
+                .every(function (letter) {
+                    return arr[0].toLowerCase()
+                        .indexOf(letter) !== -1;
+                });
+        }
+
+        mutation(["hello", "hey"]);
+    </script>
+</body>
+
+</html>

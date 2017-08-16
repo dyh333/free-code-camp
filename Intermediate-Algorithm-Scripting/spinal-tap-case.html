@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function spinalCase(str) {
+            str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+            var regex = /\s+|_+/g;
+
+            return str.replace(regex, '-').toLowerCase();
+        }
+
+        spinalCase('ThRs Is Spinal Tap');
+    </script>
+</body>
+
+</html>

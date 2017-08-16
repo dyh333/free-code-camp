@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function diff(arr1, arr2) {
+            var newArr = arr1.concat(arr2);
+
+            return newArr.filter((num) => {
+                return (arr1.indexOf(num) === -1 || arr2.indexOf(num) === -1);
+            });
+        }
+
+        diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+    </script>
+</body>
+
+</html>

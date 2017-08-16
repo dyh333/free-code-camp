@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function steamroller(arr) {
+            var newArr = new Array();
+
+            var flatter = function(arg){
+                if(Array.isArray(arg)){
+                    for(var i=0; i<arg.length; i++){
+                        flatter(arg[i]);
+                    }
+                } else {
+                    newArr.push(arg);
+                }
+            }
+
+            for(var i=0; i<arr.length; i++){
+                flatter(arr[i]);
+            }
+
+            return newArr;
+        }
+
+        steamroller([1, [2], [3, [[4]]]]);
+    </script>
+</body>
+
+</html>

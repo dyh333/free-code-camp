@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function where(arr, num) {
+            arr = arr.sort(function (a, b) {
+                return a - b;
+            });
+
+            var index = 0;
+            while (arr[index] < num) {
+                index++;
+            }
+
+            return index;
+        }
+
+        function where_advanced(arr, num) {
+            arr.push(num);
+            arr.sort(function (a, b) { return a - b });
+            return arr.indexOf(num);
+        }
+
+        where([40, 60], 50);
+    </script>
+</body>
+
+</html>

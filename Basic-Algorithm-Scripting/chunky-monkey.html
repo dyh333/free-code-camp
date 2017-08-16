@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function chunk(arr, size) {
+            var chunkArr = new Array();
+
+            for (var i = 0; i < arr.length; i += size) {
+                var sliced = arr.slice(i, i + size);
+                chunkArr.push(sliced);
+            }
+
+            return chunkArr;
+        }
+
+        chunk([0, 1, 2, 3, 4, 5], 3);
+    </script>
+</body>
+
+</html>

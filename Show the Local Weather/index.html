@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="index.css" rel="stylesheet">
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/handlebars-v4.0.10.js"></script>
+    <script src="lib/moment.min.js"></script>
+    <script src="lib/hmac-sha1.js"></script>
+    <script type="text/javascript" src="lib/hmac-sha1.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <img src="imgs/logo-red-text-white-4x.png">
+    </div>
+
+    <div id="main">
+
+        <!-- <div id="title">
+            <h2 id="h_location" style="border-right: 1px solid white; padding: 0px 20px;">苏州</h2>
+            <div style="margin-left: 20px;">
+                <div>
+                    <span id="txt_lastupdate" class="f12">2017-08-08 11:30</span>
+                </div>
+                <div>
+                    <span class="f12">天气实况</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="today">
+            <img src="imgs/3d_60/0.png" style="height: 90px; width: 90px; background-size: 100%;">
+            <div style="margin-left: 10px;">
+                <div>
+                    <span id="weather_text" class="f20">雷阵雨</span>
+                    <span id="temperature" class="f16">28</span>
+                    <span class="f16">℃</span>
+                </div>
+                <div>
+                    <span id="">东南风2级</span>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="weather_now">
+            <script id="weather-now-template" type="text/x-handlebars-template">
+                <div id="title">
+                    <h2 style="border-right: 1px solid white; padding: 0px 20px;">{{location.name}}</h2>
+                    <div style="margin-left: 20px;">
+                        <div>
+                            <span class="f12">{{formatTime last_update "YYYY-MM-DD hh:mm, dddd"}}</span>
+                        </div>
+                        <div>
+                            <span class="f12">天气实况</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="today">
+                    <img src="imgs/3d_60/{{now.code}}.png" style="height: 90px; width: 90px; background-size: 100%;">
+                    <div style="margin-left: 10px;">
+                        <div>
+                            <spanclass="f20">{{now.text}}</span>
+                            <span class="f16">{{now.temperature}}</span>
+                            <span class="f16">℃</span>
+                        </div>
+                        <div>
+                            <span id="txt_wind"></span>
+                        </div>
+                    </div>
+                </div>
+            </script>
+        </div>
+
+
+
+        <div id="weather_week">
+            <div id="week_title">
+                <span>48小时预报</span>
+            </div>
+            <div id="week_box">
+                <!-- <div>
+                    <div class="item-inner">
+                        <div>
+                            <span>今天白天</span>
+                        </div>
+                        <div>
+                            <img src="imgs/3d_60/0.png" alt="">
+                        </div>
+                        <div>
+                            <span>雷阵雨</span>
+                        </div>
+                        <div>
+                            <span>28</span>
+                            <span>℃</span>
+                        </div>
+                    </div>
+                    <div class="item-inner">
+                        <div>
+                            <span>今天白天</span>
+                        </div>
+                        <div>
+                            <img src="imgs/3d_60/0.png" alt="">
+                        </div>
+                        <div>
+                            <span>雷阵雨</span>
+                        </div>
+                        <div>
+                            <span>28</span>
+                            <span>℃</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="item-inner">
+                        <div>
+                            <span>今天白天</span>
+                        </div>
+                        <div>
+                            <img src="imgs/3d_60/0.png" alt="">
+                        </div>
+                        <div>
+                            <span>雷阵雨</span>
+                        </div>
+                        <div>
+                            <span>28</span>
+                            <span>℃</span>
+                        </div>
+                    </div>
+                    <div class="item-inner">
+                        <div>
+                            <span>今天白天</span>
+                        </div>
+                        <div>
+                            <img src="imgs/3d_60/0.png" alt="">
+                        </div>
+                        <div>
+                            <span>雷阵雨</span>
+                        </div>
+                        <div>
+                            <span>28</span>
+                            <span>℃</span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <script id="item-inner-template" type="text/x-handlebars-template">
+                    {{#each daily}}
+                    <div>
+                        <div class="item-inner">
+                            <div>
+                                <span>{{date}} 白天</span>
+                            </div>
+                            <div>
+                                <img src="imgs/3d_60/{{code_day}}.png" alt="">
+                            </div>
+                            <div>
+                                <span>{{text_day}}</span>
+                            </div>
+                            <div>
+                                <span>{{high}}</span>
+                                <span>℃</span>
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div>
+                                <span>{{date}} 夜间</span>
+                            </div>
+                            <div>
+                                <img src="imgs/3d_60/{{code_night}}.png" alt="">
+                            </div>
+                            <div>
+                                <span>{{text_night}}</span>
+                            </div>
+                            <div>
+                                <span>{{low}}</span>
+                                <span>℃</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+
+        <footer>
+            <p>create by dyh333</p>
+        </footer>
+    </div>
+</body>
+
+</html>

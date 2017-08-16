@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function drop(arr, func) {
+            var length = arr.length;
+
+            var i=0;
+            while(i<length) {
+                if (!func(arr[0])) {
+                    arr.shift();
+                } else {
+                    break;
+                }
+
+                i++
+            }
+
+            return arr;
+        }
+
+        drop([1, 2, 3], function (n) { return n < 3; });
+    </script>
+</body>
+
+</html>

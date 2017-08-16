@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function titleCase(str) {
+            var arr = str.split(' ');
+
+            var newArr = new Array();
+            for (var i = 0; i < arr.length; i++) {
+                var word = arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase();
+                newArr.push(word);
+            }
+
+            return newArr.join(' ');
+        }
+
+        function titleCase_2(str) {
+            var newTitle = str.split(' ');
+            var updatedTitle = [];
+            for (var st in newTitle) {
+                updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+            }
+            return updatedTitle.join(' ');
+        }
+
+        var result = titleCase("I'm a little tea pot");
+        console.log(result);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        function smallestCommons(arr) {
+            var min = Math.min(...arr);
+            var max = Math.max(...arr);
+            
+            var scm = 1;
+            for(var i=min; i<=max; i++){
+                scm = scm * i / max_common_divisor(scm, i);
+            }
+
+            return scm;
+        }
+
+        function max_common_divisor(m, n) {//辗转相除法 求最大公约数
+            while (n != 0) {
+                var t = m % n;
+                m = n;
+                n = t;
+            }
+            return m;
+        }
+
+
+        smallestCommons([1, 5]);
+    </script>
+</body>
+
+</html>
