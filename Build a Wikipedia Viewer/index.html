@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="lib/handlebars-v4.0.10.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="search">
+        <h3>Click here for a random article</h3>
+        <input type="text">
+        <img src="icon-mobile-search.svg">
+    </div>
+
+    <div id="result">
+        <!-- <div class="query-item" data-v="87521">
+            <h3>aaaa</h3>
+            <span>asdfasdggadsfasdgadsgfasdgasg</span>
+        </div>
+        <div class="query-item">
+            <h3>aaaa</h3>
+            <span>asdfasdggadsfasdgadsgfasdgasg</span>
+        </div> -->
+
+        <script id="query-item-template" type="text/x-handlebars-template">
+            {{#each this}}
+            <div class="query-item" data-v={{this.pageid}}>
+                <h3>{{this.title}}</h3>
+                <span>{{this.extract}}</span>
+            </div>
+            {{/each}}
+        </script>
+    </div>
+</body>
+
+</html>
